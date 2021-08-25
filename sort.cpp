@@ -1,4 +1,5 @@
 #include <iostream.h>
+#include <string.h>
 
 void nhap(int a[], int &n){
 	cout<<"\nNhap vao so phan tu mang: ";
