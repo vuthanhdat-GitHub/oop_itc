@@ -14,21 +14,14 @@ void xuat(int a[], int &n){
 		cout<<"a["<<i<<"] = "<<a[i]<<endl;
 	}
 }
-
-void insertionSort(int a[] , int n){
-	for (int i = 1 ; i < n ; i++) {
-		cout << "lap lan " << i << endl;
-		int key = a[i];
-		int j = i -1;
-		
-		while (j >= 0 && a[j] > key) {
-			cout << "i=" << i<< ",j=" << j << ",key = " << key << endl;
-			xuat(a,n);
-			a[j+1] = a[j];
-			j--;
+	
+void BubbleSort(int a[], int n){
+	int i, j;
+	for(i = 1; i < n; i++){
+		for(j = n; j > i; j--){
+			if (a[j] < a[j-1])
+			Swap(a[j], a[j-1]);				
 		}
-		a[j+1] = key;
-		xuat(a,n);
 	}
 }
 int main(int argc, char *argv[])
@@ -36,7 +29,7 @@ int main(int argc, char *argv[])
 	int n;
 	int a[100];
 	nhap(a, n);
-	cout<<"\nSap xep InsertionSort: \n";
-	insertionSort(a,n);
+	cout<<"\nSap xep BubbleSort: ";
+	BubbleSort(a, n);
 	return 0;
 }
